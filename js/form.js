@@ -49,11 +49,27 @@ if(name!="" && phone!="" && validEmail(email) )
     name: name,
 	email: email,
     phone: phone,
+	browser: navigator.userAgent,
+	screen: screen.width+'x'+screen.height,
+	
+	
   }
 }).done(function() {
   //callback which can be used to show a thank you message
   //and reset the form
-  $("#mail_msg").text("Спасибо! Ваш запрос отправлен.");
+    
+  $('#mail_msg').fadeOut(500, function() {
+    $(this).text("Спасибо! Ваш запрос отправлен.").fadeIn(500);
+});
+  
+  
+  
+  
+  $("#app_name").val('');
+  $("#app_email").val('');
+  $("#app_phone").val('');
+  
+  
 });
 	
 	

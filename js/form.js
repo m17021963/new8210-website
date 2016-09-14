@@ -53,7 +53,7 @@ if(name!="" && phone!="" && validEmail(email) )
 }).done(function() {
   //callback which can be used to show a thank you message
   //and reset the form
-  $("#mail_msg").load("Спасибо! Ваш запрос отправлен.");
+  $("#mail_msg").text("Спасибо! Ваш запрос отправлен.");
 });
 	
 	

@@ -29,7 +29,13 @@ else
 
 if(name!="" && phone!="" && validEmail(email) )
 {
+	
+	$.post( "https://getsimpleform.com/messages?form_api_token=256b851ea613a4c739a6496e65859349", $( "#send_order" ).serialize() );
+
+	
 	$("#mail_msg").load("email.php?name="+name+"&email="+email+"&phone="+phone);
+	
+	
 	$("#app_name").val('');
 	$("#app_email").val('');
 	$("#app_phone").val('');

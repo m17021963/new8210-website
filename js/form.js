@@ -29,7 +29,7 @@ else
 
 if(name!="" && phone!="" && validEmail(email) )
 {
-	
+/*	
 	$.post( "https://getsimpleform.com/messages?form_api_token=256b851ea613a4c739a6496e65859349", $( "#send_order" ).serialize() );
 
 	
@@ -39,6 +39,28 @@ if(name!="" && phone!="" && validEmail(email) )
 	$("#app_name").val('');
 	$("#app_email").val('');
 	$("#app_phone").val('');
+	
+	*/
+	
+	$.ajax({
+  dataType: 'jsonp',
+  url: "http://getsimpleform.com/messages/ajax?form_api_token=256b851ea613a4c739a6496e65859349",
+  data: {
+    name: name,
+	email: email,
+    phone: phone,
+  }
+}).done(function() {
+  //callback which can be used to show a thank you message
+  //and reset the form
+  $("#mail_msg").load("Спасибо! Ваш запрос отправлен.");
+});
+	
+	
+	
+	
+	
+	
 }	
 return false;
 }
